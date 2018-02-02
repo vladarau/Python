@@ -12,8 +12,8 @@ def calc(key):
         # check that expression is correct
         str0 = "0123456789("
         if calc_entry.get()[0] not in str0:
-            #calc_entry.delete(0, END)
-            calc_entry.insert(END, "Expression starts incorrectly")
+            calc_entry.delete(0, END)
+            #calc_entry.insert(END, "Expression starts incorrectly")
             messagebox.showerror("Error", "Incorrect expression")
 
             #calculation
@@ -21,8 +21,8 @@ def calc(key):
             result = eval(calc_entry.get())
             calc_entry.insert(END, "=" + str(result))
         except:
-            #calc_entry.delete(0, END)
-            calc_entry.insert(END, "Error!")
+            calc_entry.delete(0, END)
+            #calc_entry.insert(END, "Error!")
             messagebox.showerror("Error", "Incorrect expression")
     #clear all
     elif key == "C":
