@@ -66,5 +66,4 @@ for i in button_list:
 
 calc_entry = Entry(root, width = 33)
 calc_entry.grid(row = 0, column = 0, columnspan = 5)
-
 root.mainloop()
