@@ -75,7 +75,7 @@ def test(s):
 
 while True:
      try:
-        expression = "2%"
+        expression = input()
      except EOFError:
          exit(0)
      curlex = expression.replace(" ", "")
@@ -86,4 +86,3 @@ while True:
              exit(0)
      index = 0
      print(expr())
-     exit(0)
