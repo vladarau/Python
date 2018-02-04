@@ -48,16 +48,19 @@ def mult(): #calculating multiplier
             a = (-1) * mult()
         else:
             number = "" #extracting a number from expression adding a dor if it is a float number
+            error = ""
             if curlex[index] == ".":
                 print("Number must start with a digit!")
                 exit(0)
             while (index < len(curlex) and ((curlex[index] >= "0" and curlex[index] <= "9") or curlex[index] == ".")):
                 number += curlex[index]
                 index += 1
+            if index < len(curlex):
+                error += curlex[index]
             try:
                 a = float(number)
             except ValueError:
-                print("Incorrect number " + number)
+                print("Incorrect number or character in the input = " + error + number)
                 exit(0)
     return a
 
@@ -75,7 +78,7 @@ def test(s):
 
 while True:
      try:
-        expression = input()
+        expression = "&1"
      except EOFError:
          exit(0)
      curlex = expression.replace(" ", "")
