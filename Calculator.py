@@ -4,10 +4,14 @@ def expr(): # calculating expression
     global curlex
     while (index < len(curlex) and(curlex[index] == "+" or curlex[index] == "-")):
         index += 1
-        if (curlex[index - 1] == "+"):
-            a += item()
+        if index < len(curlex):
+            if (curlex[index - 1] == "+"):
+                a += item()
+            else:
+                a -= item()
         else:
-            a -= item()
+            print("Incorrect expression: there no summand after the operator")
+            exit(0)
     return a
 
 def item(): #calculating summand
@@ -53,9 +57,21 @@ def mult(): #calculating multiplier
             try:
                 a = float(number)
             except ValueError:
-                print("Incorrect number!")
+                print("Incorrect number " + number)
                 exit(0)
     return a
+
+def test(s):
+    global curlex
+    curlex = s.replace(" ", "")
+    global index
+    index = 0
+    return expr()
+
+#print(test("2..3"))
+#print(test("-1+3"))
+#print(test("2*(2+2)"))
+#print(test("1+&3"))
 
 while True:
      try:
