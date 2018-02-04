@@ -78,7 +78,7 @@ def test(s):
 
 while True:
      try:
-        expression = "&1"
+        expression = "1 +"
      except EOFError:
          exit(0)
      curlex = expression.replace(" ", "")
